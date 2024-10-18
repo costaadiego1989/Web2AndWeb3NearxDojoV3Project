@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 
 export const Container = styled.div`
-  position: absolute;
-  right: 20px;
+  @media (min-width: 701px) {
+    position: absolute;
+    right: 20px;    
+  }
 `;
 
 interface WalletButtonProps {
@@ -11,7 +13,10 @@ interface WalletButtonProps {
 }
 
 export const WalletButton = styled.button<WalletButtonProps>`
-  width: 17rem;
+  width: 12rem;
+  @media (min-width: 850px) {
+    width: 17rem;    
+  }
   padding: 15px 25px;
   font-size: 16px;
   font-weight: bold;
