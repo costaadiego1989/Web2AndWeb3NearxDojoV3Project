@@ -1,7 +1,11 @@
+import { Home } from "./pages/Home"
+import { GlobalStyle } from "./styles/global"
+
 function App() {
   return (
     <div>
-      <h1>dMessage</h1>      
+      <Home />
+      <GlobalStyle />
     </div>
   )
 }
