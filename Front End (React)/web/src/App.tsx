@@ -1,12 +1,15 @@
+import { Header } from "./components/Header"
 import { Home } from "./pages/Home"
 import { GlobalStyle } from "./styles/global"
+import { WalletProvider } from "./contexts/walletContext";
 
-function App() {
+function App() {  
   return (
-    <div>
+    <WalletProvider>
+      <Header />
       <Home />
       <GlobalStyle />
-    </div>
+    </WalletProvider>
   )
 }
 

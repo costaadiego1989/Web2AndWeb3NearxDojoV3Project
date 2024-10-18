@@ -5,7 +5,7 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   background-color: #f4f4f9;
   font-family: 'Arial', sans-serif;
 `;
