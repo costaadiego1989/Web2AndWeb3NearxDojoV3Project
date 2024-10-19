@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body, input, textarea, button {
+    ${mixins.fonts["roboto-regular"]}
   }
 
   button {
