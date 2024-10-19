@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { colors } from "../../styles/colors";
+import { mixins } from "../../styles/mixins";
 
 
 export const Container = styled.div`
@@ -14,21 +16,20 @@ interface WalletButtonProps {
 
 export const WalletButton = styled.button<WalletButtonProps>`
   width: 12rem;
+  padding: 15px 25px;  
+  background-color: ${props => (props.connected ? colors.button.on : colors.button.off)};
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s ease;
+
   @media (min-width: 850px) {
     width: 17rem;    
   }
-  padding: 15px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: ${props => (props.connected ? '#4CAF50' : '#f44336')};
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s ease;
+
+  ${mixins.fonts.button.wallet};
 
   &:hover {
-    background-color: ${props => (props.connected ? '#a19c2a' : '#269b89')};
+    background-color: ${props => (props.connected ? colors.button.preoff : colors.button.preon)};
   }
 `;
 

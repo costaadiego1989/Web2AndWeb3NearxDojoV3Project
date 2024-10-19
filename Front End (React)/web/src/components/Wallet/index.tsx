@@ -43,7 +43,8 @@ export function Wallet() {
   return (
     <Container>
       <WalletButton 
-        onClick={isConnected ? disconnectWallet : connectWallet} connected={isConnected}
+        onClick={isConnected ? disconnectWallet : connectWallet} 
+        connected={isConnected}
         onMouseOver={ e => e.currentTarget.textContent = isConnected ? "Disconnect Wallet" : "Connect Wallet" }
         onMouseOut={ e => e.currentTarget.textContent = isConnected ? `Connected: ${shortenAddress(address!)}` : 'Disconnected'}
       >
