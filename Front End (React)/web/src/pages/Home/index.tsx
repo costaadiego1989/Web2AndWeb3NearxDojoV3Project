@@ -11,6 +11,7 @@ export function Home() {
   const [message, setMessage] = useState<string>('');
   const [submittedMessage, setSubmittedMessage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+  const [transaction, setTransaction] = useState<any>('');
 
   const contractAddress = "0xD2989B49EB213aed545c112F5064e99B6a7365D7";  
 
@@ -19,7 +20,7 @@ export function Home() {
     setLoading(true);
 
     if (!provider || !address) {
-      console.log(`Provider or account not found!`);      
+      alert(`Provider or account not found!`);      
       setLoading(false);
       return;
     }
@@ -29,16 +30,15 @@ export function Home() {
       const messageContract = new ethers.Contract(contractAddress, abi, signer);
 
       const tx = await messageContract.setMessage(message);
-      console.log(`Transaction sent: `, tx.hash);
+      setTransaction(tx);
 
       await tx.wait();
-      console.log(`Transaction confirmed!`);
 
       setSubmittedMessage(message);
       setMessage("");
       setLoading(false);            
     } catch (error) {
-      console.log(`Error on interacting with the contract: `, error);
+      alert(`Error on interacting with the contract: ${error}`);
       setLoading(false);
     }
   };
@@ -57,11 +57,23 @@ export function Home() {
           {loading ? 'Sending...' : 'Send'}
         </Button>
       </Form>
+
+      {transaction && !submittedMessage && (
+        <MessageDisplay>
+          <p>Hash Transaction: {transaction.hash}</p>
+        </MessageDisplay>
+      )}
       
       {submittedMessage && (
         <MessageDisplay>
           <p>Message confirmed on the blockchain:</p>
           <Message>{submittedMessage}</Message>
+          <p>
+            Link Transaction: 
+            <a href={`https://amoy.polygonscan.com/tx/${transaction.hash}`} target="_blank">
+              https://amoy.polygonscan.com/tx/{transaction.hash}
+            </a>
+          </p>
         </MessageDisplay>
       )}
     </HomeContainer>
