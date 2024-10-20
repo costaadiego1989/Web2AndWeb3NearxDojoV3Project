@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Zooners Message Front-end
 
-Currently, two official plugins are available:
+This project is a front-end interface for interacting with a simple Message smart contract. It was developed using **React, TypeScript and Styled-Components** for styling. Additionally, context tools were implemented to manage the Wallet and MessageDisplay components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project is part of the **NearX** research group, specifically the 3rd version of DoJo, which aims to explore the integration of smart contracts with a user-friendly interface.
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Screenshots
 
-- Configure the top-level `parserOptions` property like this:
+![App Screenshot](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/raw/muller/Front%20End%20(React)/web/public/screenshoot.png)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+## 🛠 Tech Stack
+
+**Client:** React, Typescript, Styled-Components, ContextAPI
+
+## ⚙️ Installation
+Install my-project with npm
+
+Clone the repository:
+
+```bash
+    git clone https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project.git
+    cd Web2AndWeb3NearxDojoV3Project
+    cd Front\ End\ \(React\)
+    cd web
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Install the dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+    npm install
 ```
+
+Start the project:
+
+```bash
+    npm run dev
+```
+
+The project will run locally at http://localhost:5173.
+## 🤝 Contributing
+
+1. Fork this repository.
+2. Create a branch for your feature (git checkout -b my-feature).
+3. Commit your changes (git commit -m 'Add my feature').
+4. Push to the branch (git push origin my-feature).
+5. Open a Pull Request.
+## 📄 License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+## 🚀 About Me
+I'm **Müller Esposito**, a passionate **Fullstack Developer** and **Smart Contract Developer**. With a strong background in **React.js**, **Node.js**, **Typescript**, and experience in building **dApps** using **Solidity** and **Cairo**, I specialize in developing both front-end and back-end solutions, as well as smart contracts on the blockchain.
+
+### Key Skills:
+- Fullstack Web Development: **React.js**, **Node.js**, **Typescript**
+- Smart Contract Development: **Solidity**, **Cairo**
+- Web3 & Blockchain Technologies: dApps, decentralized systems
+- Version Control: **Git**, **GitHub**
+- Agile Methodologies: **SCRUM**, **KANBAN**
+
+Currently working on exciting projects in the **Web3** ecosystem, leveraging blockchain technologies and decentralized systems to build innovative solutions.
+
+Feel free to reach out and collaborate on exciting new projects!
+
+## 🌐 Contact Me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/mulleresposito)
