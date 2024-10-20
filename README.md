@@ -8,7 +8,7 @@ The goal of the study is to develop a small smart contract to change the value o
 
 - Solidity + Foundry
 
-🔗 [smartcontract repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/muller/Backend%20(Solidity))
+🔗 [smartcontract repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/main/Backend)
 
 ## 🎨 Front-end
 
@@ -17,7 +17,7 @@ The goal of the study is to develop a small smart contract to change the value o
 - ContextAPI
 - Ethers.js
 
-🔗 [front-end repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/muller/Front%20End%20(React)/web)
+🔗 [react front-end repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/main/Frontend/react)
 
 
 
