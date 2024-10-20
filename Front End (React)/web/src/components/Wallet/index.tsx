@@ -5,7 +5,7 @@ import { WalletContext } from "../../contexts/walletContext";
 import { shortenAddress } from "../../utils/helpers";
 
 export function Wallet() {
-  const { setIsConnected, setProvider, setAddress, address, isConnected } = useContext(WalletContext);
+  const { setIsConnected, setProvider, setAddress, setError, address, isConnected } = useContext(WalletContext);
 
   const connectWallet = async () => {
     if (!window.ethereum) {
@@ -23,14 +23,13 @@ export function Wallet() {
         const signer = await provider.getSigner();
         const address = await signer.getAddress();
         setAddress(address);
-        setIsConnected(true);
-        console.log(`Account connected: ${address}`);          
+        setIsConnected(true);    
 
       } catch (error) {
         console.log(`No one account found!`);
       }
     } catch (error) {
-      console.log(`Error on connect to network: `, error);        
+      setError({ isError: true, title: `Error on connect to network`, message: String(error) });
     }
   }
 
@@ -44,7 +43,7 @@ export function Wallet() {
     <Container>
       <WalletButton 
         onClick={isConnected ? disconnectWallet : connectWallet} 
-        connected={isConnected}
+        $connected={isConnected}
         onMouseOver={ e => e.currentTarget.textContent = isConnected ? "Disconnect Wallet" : "Connect Wallet" }
         onMouseOut={ e => e.currentTarget.textContent = isConnected ? `Connected: ${shortenAddress(address!)}` : 'Disconnected'}
       >

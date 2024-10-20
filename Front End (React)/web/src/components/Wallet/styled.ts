@@ -11,13 +11,13 @@ export const Container = styled.div`
 `;
 
 interface WalletButtonProps {
-  connected: boolean;
+  $connected: boolean;
 }
 
 export const WalletButton = styled.button<WalletButtonProps>`
   width: 12rem;
   padding: 15px 25px;  
-  background-color: ${props => (props.connected ? colors.button.on : colors.button.off)};
+  background-color: ${props => (props.$connected ? colors.button.on : colors.button.off)};
   border: none;
   border-radius: 5px;
   transition: 0.3s ease;
@@ -29,7 +29,7 @@ export const WalletButton = styled.button<WalletButtonProps>`
   ${mixins.fonts.button.wallet};
 
   &:hover {
-    background-color: ${props => (props.connected ? colors.button.preoff : colors.button.preon)};
+    background-color: ${props => (props.$connected ? colors.button.preoff : colors.button.preon)};
   }
 `;
 
