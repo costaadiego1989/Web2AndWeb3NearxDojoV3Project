@@ -8,7 +8,7 @@ The goal of the study is to develop a small smart contract to change the value o
 
 - Solidity + Foundry
 
-🔗 [smartcontract repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/main/Backend)
+🔗 [smartcontract repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/main/Smartcontract)
 
 ## 🎨 Front-end
 
