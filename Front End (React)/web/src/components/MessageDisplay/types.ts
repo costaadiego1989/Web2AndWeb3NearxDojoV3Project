@@ -1,0 +1,1 @@
+export type MessageDisplayTypes = "info" | "error";
