@@ -1,7 +1,41 @@
-# Web2AndWeb3NearxDojoV3Project
+# Nearx Dojo V3
 
-### O projeto será separado em Front End e Backend ###
-### O Front End rodará uma aplicação React e libs como Ethers para conexão com o Smart Contract ###
-### O projeto Backend será todo feito em Solidity, linguaguem nativa da EVM(Etherium Virtual Machine), onde rodará em uma Main Net ###
+This is a simple project promoted by NearX Innovation School through the DoJo program.
+
+The goal of the study is to develop a small smart contract to change the value of a storage variable in the contract called message. Along with the smart contract, we also have to develop a clean front-end to interact with it.
+
+## 📑 Smartcontract
+
+- Solidity + Foundry
+
+🔗 [smartcontract repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/muller/Backend%20(Solidity))
+
+## 🎨 Front-end
+
+- React + Typescript
+- Styled-Components
+- ContextAPI
+- Ethers.js
+
+🔗 [front-end repository](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/tree/muller/Front%20End%20(React)/web)
 
 
+
+## ✍️ Authors
+
+
+- Müller Esposito: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/mulleresposito) 
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-black?logo=github)](https://github.com/mulleresposito)
+
+- Diego Costa: 
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/costaadiego/) 
+[![GitHub](https://img.shields.io/badge/Github-Profile-black?logo=github)](https://github.com/costaadiego1989)
+
+- Emanoel: 
+[![Github](https://img.shields.io/badge/Github-Profile-black?logo=github)](https://github.com/MvpPlus)
+
+
+## 🆓 License
+
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
