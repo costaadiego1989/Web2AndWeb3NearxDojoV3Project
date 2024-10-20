@@ -8,7 +8,7 @@ The project is part of the **NearX** research group, specifically the 3rd versio
 
 ## Screenshots
 
-![App Screenshot](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/raw/main/Frontend/web/public/screenshoot.png)
+![App Screenshot](https://github.com/costaadiego1989/Web2AndWeb3NearxDojoV3Project/raw/main/Frontend/react/public/screenshoot.png)
 
 
 ## 🛠 Tech Stack
