@@ -1,12 +1,16 @@
 import { useContext, useState } from "react";
-import { Button, Form, HomeContainer, Input, Message, MessageDisplay } from "./styled";
+import { Button, Form, HomeContainer, Input } from "./styled";
 import { ethers } from "ethers";
 
 import abi from "../../assets/abi.json";
 import { WalletContext } from "../../contexts/walletContext";
+import { MessageDisplay } from "../../components/MessageDisplay";
+import { MessageDisplayHeader } from "../../components/MessageDisplay/MessageDisplayHeader";
+import { Message } from "../../components/MessageDisplay/styled";
+import { shortenAddress } from "../../utils/helpers";
 
 export function Home() {
-  const { provider, address } = useContext(WalletContext);
+  const { provider, address, error, setError } = useContext(WalletContext);
 
   const [message, setMessage] = useState<string>('');
   const [submittedMessage, setSubmittedMessage] = useState<string>('');
@@ -18,9 +22,10 @@ export function Home() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
 
     if (!provider || !address) {
-      alert(`Provider or account not found!`);      
+      setError({ isError: true, title: `Provider or account not found!`});      
       setLoading(false);
       return;
     }
@@ -38,7 +43,7 @@ export function Home() {
       setMessage("");
       setLoading(false);            
     } catch (error) {
-      alert(`Error on interacting with the contract: ${error}`);
+      setError({ isError: true, title: `Error on interacting with the contract:`, message: String(error) });
       setLoading(false);
     }
   };
@@ -59,21 +64,33 @@ export function Home() {
       </Form>
 
       {transaction && !submittedMessage && (
-        <MessageDisplay>
-          <p>Hash Transaction: {transaction.hash}</p>
+        <MessageDisplay type="info">
+          <MessageDisplayHeader>Processing Transaction...</MessageDisplayHeader>
+          <Message>
+            <p>Hash Transaction: {transaction.hash}</p>
+          </Message>
         </MessageDisplay>
       )}
       
       {submittedMessage && (
-        <MessageDisplay>
-          <p>Message confirmed on the blockchain:</p>
-          <Message>{submittedMessage}</Message>
-          <p>
-            Link Transaction: 
-            <a href={`https://amoy.polygonscan.com/tx/${transaction.hash}`} target="_blank">
-              https://amoy.polygonscan.com/tx/{transaction.hash}
-            </a>
-          </p>
+        <MessageDisplay type="info">
+          <MessageDisplayHeader>Transaction confirmed on the blockchain:</MessageDisplayHeader>
+          <Message>
+            <p>The message <span>{submittedMessage}</span> was storaged in the smartcontract!</p>
+            <p>
+              Link Transaction: 
+              <a href={`https://amoy.polygonscan.com/tx/${transaction.hash}`} target="_blank">
+                https://amoy.polygonscan.com/tx/{shortenAddress(transaction.hash)}
+              </a>
+            </p>
+          </Message>      
+        </MessageDisplay>
+      )}
+
+      {error?.isError && (
+        <MessageDisplay type="error">
+          <MessageDisplayHeader>Error!</MessageDisplayHeader>
+          <Message>{error.message}</Message>
         </MessageDisplay>
       )}
     </HomeContainer>

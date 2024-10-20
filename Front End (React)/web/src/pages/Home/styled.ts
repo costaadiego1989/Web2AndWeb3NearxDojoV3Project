@@ -51,18 +51,3 @@ export const Button = styled.button`
     cursor: not-allowed;
   }
 `;
-
-export const MessageDisplay = styled.div`
-  margin-top: 20px;
-  background-color: #e0f7fa;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: auto;
-  text-align: center;
-`;
-
-export const Message = styled.p`
-  font-size: 1.2rem;
-  color: #333;
-`;
